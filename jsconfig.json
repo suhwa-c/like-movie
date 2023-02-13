@@ -1,5 +1,12 @@
 {
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@/common-css/*": ["components/common-css/*"],
+      "@/atoms/*": ["components/atoms/*"],
+      "@/molecule/*": ["components/molecule/*"],
+      "@/organism/*": ["components/organism/*"],
+      "@/template/*": ["components/template/*"]
+    }
   }
 }

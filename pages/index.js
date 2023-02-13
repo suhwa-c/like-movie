@@ -1,4 +1,4 @@
-import { getPokemonList } from "core/apis/pokemon";
+import { getPokemonList, getMovieList } from "core/apis/pokemon";
 
 // 컴포넌트
 import Header from "@/organism/Header";
@@ -7,7 +7,9 @@ import { BlackBoldTitle } from "@/common-css/text";
 import BestMonthCard from "@/molecule/BestMonthCard";
 
 export default function Home() {
-  const data = getPokemonList();
+  // const data = getPokemonList();
+  const data = getMovieList();
+
   const monthMovieData = [
     {
       movieId: 0,
@@ -65,8 +67,8 @@ export default function Home() {
             MD's Pick 추천 영화 🎬
           </BlackBoldTitle>
           <FlexContainer className="center top-32">
-            {monthMovieData.map((movie) => {
-              return <BestMonthCard key={movie.id} movie={movie} />;
+            {monthMovieData.map((movie, index) => {
+              return <BestMonthCard key={index} movie={movie} />;
             })}
           </FlexContainer>
         </Section>
